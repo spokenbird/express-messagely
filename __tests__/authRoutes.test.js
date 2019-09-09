@@ -6,7 +6,7 @@
 // const User = require("../models/user");
 
 
-// describe("Auth Routes Test", async function () {
+// describe("Auth Routes Test", function () {
 
 //   beforeEach(async function () {
 //     await db.query("DELETE FROM messages");
