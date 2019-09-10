@@ -10,7 +10,7 @@ const { SECRET_KEY } = require("../config");
 let testUserToken1;
 let testUserToken2;
 
-describe("Messages Routes Test", function () {
+describe("User Routes Test", function () {
   beforeEach(async function () {
     await db.query("DELETE FROM messages");
     await db.query("DELETE FROM users");
@@ -20,7 +20,7 @@ describe("Messages Routes Test", function () {
       password: "secret",
       first_name: "Test1",
       last_name: "Testy1",
-      phone: "+14155550000",
+      phone: "+14155550000"
     });
     
     let user2 = await User.register({
@@ -28,7 +28,7 @@ describe("Messages Routes Test", function () {
       password: "secret",
       first_name: "Test2",
       last_name: "Testy2",
-      phone: "+14159999999",
+      phone: "+14159999999"
     });
 
     const user1payload = { username: "test1" };
@@ -56,7 +56,7 @@ describe("Messages Routes Test", function () {
           username: "test1",
           first_name: "Test1",
           last_name: "Testy1",
-          phone: "+14155550000",
+          phone: "+14155550000"
         }, {
           username: "test2",
           first_name: "Test2",
