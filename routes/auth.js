@@ -19,9 +19,9 @@ router.post("/login", async function(req, res, next) {
     const user = await User.authenticate(username, password);
     
     if (user) {
-      let token = jwt.sign( {username}, SECRET_KEY);
+      let _token = jwt.sign( {username}, SECRET_KEY);
       await User.updateLoginTimestamp(username);
-      return res.json({ token });
+      return res.json({ _token });
     } else {
       throw new ExpressError("Invalid username or password!", 400);
     }
@@ -44,9 +44,9 @@ router.post("/register", async function(req, res, next) {
     const user = await User.register({username, password, first_name, last_name, phone});
 
     if (user) {
-      let token = jwt.sign( {username}, SECRET_KEY);
+      let _token = jwt.sign( {username}, SECRET_KEY);
       await User.updateLoginTimestamp(username);
-      return res.json({ token });
+      return res.json({ _token });
     } else {
       throw new ExpressError("Registration failed", 400);
     }

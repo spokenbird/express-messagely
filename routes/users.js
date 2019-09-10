@@ -14,9 +14,9 @@ const router = new express.Router();
 router.get("/", ensureLoggedIn, async function(req, res, next) {
   try {
     const users = await User.all();
-    console.log(users);
     return res.json({users});
   } catch (err) {
+    console.log(" WIOETWOGJRAOIFJWIGJREOGJREI")
     return next(err);
   }
 });

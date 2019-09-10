@@ -67,7 +67,7 @@ class User {
       `SELECT username, first_name, last_name, phone
         FROM users
         ORDER BY last_name, first_name`
-    )
+    );
     return users.rows;
   }
 
